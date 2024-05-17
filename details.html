@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Section</title>
+    <style>
+        /* Basic styling for the comment box */
+        .container {
+            max-width: 640px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            border: none;
+            background: #E8E8E8;
+            padding: 5px 10px;
+            height: 50%;
+            border-radius: 5px 5px 0px 0px;
+            border-bottom: 2px solid #016BA8;
+            transition: all 0.5s;
+            margin-top: 15px;
+        }
+        button.primaryContained {
+            background: #016ba8;
+            color: #fff;
+            padding: 10px 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <textarea id="commentInput" placeholder="Write your comment"></textarea>
+        <input type="text" id="nameInput" placeholder="Your name">
+        <input type="email" id="emailInput" placeholder="Your email">
+        <button onclick="addComment()">Submit</button>
+        <div id="comments"></div>
+    </div>
+
+    <script>
+        const comments = [];
+
+        function addComment() {
+            const name = document.getElementById("nameInput").value;
+            const email = document.getElementById("emailInput").value;
+            const comment = document.getElementById("commentInput").value;
+
+            if (name && email && comment) {
+                comments.push({ name, email, comment });
+                displayComments();
+            }
+        }
+
+        function displayComments() {
+            const commentsDiv = document.getElementById("comments");
+            commentsDiv.innerHTML = "";
+            comments.forEach((c) => {
+                const commentElement = document.createElement("p");
+                commentElement.textContent = `${c.name} (${c.email}): ${c.comment}`;
+                commentsDiv.appendChild(commentElement);
+            });
+        }
+    </script>
+</body>
+</html>

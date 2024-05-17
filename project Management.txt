@@ -1,0 +1,19 @@
+Admin:
+1. Admin Dashboard:
+• Overview of submitted projects.
+• Option to review and manage project submissions(Project request accept/reject).
+• Option to create new project tasks for the students with deadline.(Based on the number of submission lists created by the admin, the progress bar will dynamically change when a student chooses one while submitting a report.)
+
+Student:
+1. Student Dashboard:
+• Overview of submitted projects.
+• Option to submit a new project and edit it within limited period of time.
+
+Outsider/Guest:
+1. Homepage:
+• Introduction to the website.
+• Featured projects or latest submissions.
+• Project gallery.
+2. Project Detail Page:
+• Detailed view of a specific project submission.
+• Ratings and reviews.
